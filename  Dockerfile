@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+
+ENV DEBIAN_FRONTEND=noninteractive
+WORKDIR /app
+
+# System libs some wheels need
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential libglib2.0-0 libgl1-mesa-glx && \
+    rm -rf /var/lib/apt/lists/*
+
+# Install deps (root requirements.txt)
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy your app
+COPY backend /app/backend
+COPY query.py /app/
+# ensure backend is a package
+RUN python - <<'PY'\nimport pathlib; pathlib.Path('backend/__init__.py').touch()\nPY
+
+# Hugging Face Spaces listens on 7860
+ENV PORT=7860
+EXPOSE 7860
+
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "7860"]

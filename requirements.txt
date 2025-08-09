@@ -1,9 +1,7 @@
 fastapi
-uvicorn
-mangum
-pydantic
-requests
-numpy
-torch
-transformers
+uvicorn[standard]
 sentence-transformers
+PyMuPDF
+numpy
+scikit-learn
+huggingface_hub
