@@ -32,3 +32,6 @@ backend/data/
 # netlify/vercel local artifacts
 .netlify/
 .vercel/
+venv/
+__pycache__/
+*.pyc

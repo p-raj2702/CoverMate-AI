@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-PyMuPDF
-requests
-sentence-transformers
-faiss-cpu
-scikit-learn
-google-generativeai

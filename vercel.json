@@ -1,10 +1,15 @@
 {
     "version": 2,
     "functions": {
-      "api/index.py": { "runtime": "python3.11", "maxDuration": 60 }
+      "api/hackrx/run.py": {
+        "runtime": "python3.9",
+        "maxDuration": 60
+      }
     },
     "routes": [
-      { "src": "/api/v1/hackrx/run", "dest": "/api/index.py" },
-      { "src": "/api/(.*)", "dest": "/api/index.py" }
+      {
+        "src": "/api/hackrx/run",
+        "dest": "/api/hackrx/run.py"
+      }
     ]
   }

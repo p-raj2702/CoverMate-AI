@@ -1,8 +1,9 @@
 fastapi
 uvicorn
-PyMuPDF
+mangum
+pydantic
 requests
+numpy
+torch
+transformers
 sentence-transformers
-faiss-cpu
-scikit-learn
-google-generativeai
