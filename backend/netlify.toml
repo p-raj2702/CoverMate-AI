@@ -1,0 +1,12 @@
+[build]
+functions = "functions"
+command = "pip install -r requirements.txt"
+publish = "." 
+
+[dev]
+command = "uvicorn backend.main:app --host 0.0.0.0 --port 10000"
+
+[[redirects]]
+from = "/api/*"
+to = "/.netlify/functions/api"
+status = 200

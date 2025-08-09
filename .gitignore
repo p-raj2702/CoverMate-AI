@@ -1,0 +1,34 @@
+# venvs
+venv/
+*/venv/
+.env/
+.venv/
+
+# caches & build
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.dylib
+.ipynb_checkpoints/
+.cache/
+.mypy_cache/
+.pytest_cache/
+dist/
+build/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+
+# model & download caches (keep small sample files only)
+backend/models/
+backend/data/
+# allow placeholder README in these dirs
+!backend/models/.gitkeep
+!backend/data/.gitkeep
+
+# netlify/vercel local artifacts
+.netlify/
+.vercel/
